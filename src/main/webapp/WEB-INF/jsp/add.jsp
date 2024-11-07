@@ -9,9 +9,7 @@
     <form action="${urlAdd}" modelAttribute="employeeForm" method="post">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="nameEmployee" required="true"> <!-- En name tiene que
-                                                                                                     aparecer el mismo nombre que en la
-                                                                                                     clase modelo de Employee -->
+            <input type="text" class="form-control" id="name" name="nameEmployee" required="true">
         </div>
         <div class="mb-3">
             <label for="department" class="form-label">Department</label>

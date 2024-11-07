@@ -28,22 +28,21 @@ public class IndexController {
     public String init(ModelMap model){
         List<Employee> employees = employeeService.listEmployees();
         employees.forEach((employee) -> LOGGER.info(employee.toString()));
-        //Compartimos el modelo con la vista
         model.put("employees" , employees);
-        return "index"; //De manera automática se llama a la página de index.jsp
+        return "index";
 
     }
 
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String showAdd(){
-        return "add"; //añadir.jsp
+        return "add";
     }
 
     @RequestMapping(value="/add", method = RequestMethod.POST)
     public String add(@ModelAttribute("employeeForm") Employee employee){
         LOGGER.info("Employee to add: " + employee);
         employeeService.saveEmployee(employee);
-        return "redirect:/"; //Redirige al path "/" que es el path inicial
+        return "redirect:/";
     }
 
     @RequestMapping(value="/edit", method = RequestMethod.GET)
@@ -51,14 +50,14 @@ public class IndexController {
         Employee employee = employeeService.searchEmployeeById(idEmployee);
         LOGGER.info("Employee to edit: " + employee);
         model.put("employee", employee);
-        return "edit";//mostrar edit.jsp
+        return "edit";
     }
 
     @RequestMapping (value="/edit", method = RequestMethod.POST)
     public String edit(@ModelAttribute("employeeForm") Employee employee){
         LOGGER.info("Employee to save: " + employee);
         employeeService.saveEmployee(employee);
-        return "redirect:/"; //redirigir al controlador
+        return "redirect:/";
     }
 
     @RequestMapping (value="/delete", method = RequestMethod.GET)

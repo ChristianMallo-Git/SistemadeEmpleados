@@ -27,12 +27,10 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void saveEmployee(Employee employee) {
         employeeRepository.save(employee);
-        //Si se hace un save y es null se hace un INSERT si ya existe un empleado un UPDATE
     }
 
     @Override
     public void deleteEmployee(Employee employee) {
         employeeRepository.delete(employee);
-
     }
 }

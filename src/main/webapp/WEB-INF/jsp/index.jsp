@@ -19,7 +19,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="employee" items="${employees}"> <!--Este employees es el identificador que pusimos en el controlador !-->
+            <c:forEach var="employee" items="${employees}">
                 <tr>
                     <th scope="row">${employee.idEmployee}</th>
                     <td>${employee.nameEmployee}</td>
